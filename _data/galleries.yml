@@ -1,0 +1,38 @@
+- id: gallery
+  imagefolder: /images/galleries/gallery-postcard
+  heading: NZ Bird Postcard Collection
+  width: 400px
+  images:
+  - filename: NZBirdsPostcardCollection.Huia.png
+    alttext: Huia
+  - filename: NZBirdsPostcardCollection.Kakapo.png
+    alttext: Kakapo
+  - filename: NZBirdsPostcardCollection.Kea.png
+    alttext: Kea
+  - filename: NZBirdsPostcardCollection.Kereru.png
+    alttext: Kereru
+  - filename: NZBirdsPostcardCollection.Kiwi.png
+    alttext: Kiwi
+  - filename: NZBirdsPostcardCollection.Kokako.png
+    alttext: Kokako
+  - filename: NZBirdsPostcardCollection.Kotare.png
+    alttext: Kotare
+  - filename: NZBirdsPostcardCollection.Pukeko.png
+    alttext: Pukeko
+  - filename: NZBirdsPostcardCollection.Tui.png
+    alttext: Tui
+- id: gallery
+  imagefolder: /images/galleries/gallery-nzbird
+  heading: New Zealand Bird Collection
+  width: 100px
+  images:
+  - filename: NewZealandBirds.BellbirdsInKohai.png
+    alttext: Bellbirds in Kohai
+  - filename: NewZealandBirds.Fantail.png
+    alttext: Fantail
+  - filename: NewZealandBirds.Kingfisher.png
+    alttext: Kea
+  - filename: NewZealandBirds.PiedShag.png
+    alttext: Pied Shag
+  - filename: NewZealandBirds.TuiInToitois.png
+    alttext: Tui in Toitoi

@@ -1,0 +1,20 @@
+<div class="gallery">
+
+    {% for gallery in site.data.galleries %}
+      {% if gallery.id == page.gallery-id %}
+        <div class="text">
+
+            <h2 class="editable">{{ gallery.heading }}</h2>
+
+        </div>
+        <div>
+          {% for image in gallery.images %}
+            <img src="{{ gallery.imagefolder | prepend: site.baseurl | replace: '//', '/' }}/{{ image.filename }}" alt="{{ image.alttext }}">
+            <div class="info">
+              <p align="left"> {{ image.alttext }}</p>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endfor %}
+</div>
