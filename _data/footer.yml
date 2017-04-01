@@ -1,0 +1,15 @@
+left_links:
+  - name: Blog
+    link: /blog/
+  - name: Contact
+    link: /contact/
+  - name: Colouinz
+    link: /colourinz/
+right_links:
+  - name:
+    link: https://twitter.com/JCFordee
+    social_icon: Twitter
+    new_window: true
+  - name:
+    link: /feed.xml
+    social_icon: RSS

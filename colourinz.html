@@ -1,0 +1,55 @@
+---
+title: Colourinz
+description: Brand new coloring app for adults. Available for iPad and iPhone on the App Store.
+image: /images/Colourinz.png
+---
+
+<section class="hero" style="background-image: url({% include relative-src.html src=page.image %})">
+	<div class="inner-hero text-container">
+		<div class="hero-text-container">
+			<h1 class="editable">Colourinz</h1>
+			<p class="subtext editable">Brand new coloring app for adults. Available for iPad and iPhone on the App Store.</p>
+		</div>
+	</div>
+</section>
+
+<div class="content">
+	<section class="info" id="learn-more">
+		<div class="container flex">
+			<div class="text">
+				<h2 class="editable">Coming soon: Colourinz</h2>
+				<p class="editable">Brand new coloring app for adults. Coming son for the iPad and iPhone on the App Store.</p>
+				<img class="editable" src="/images/AppStore.svg" alt="App Store Badge" />
+			</div>
+			<div class="image">
+				<img class="editable" src="/images/Colourinz.png" alt="Screenshot" />
+			</div>
+		</div>
+	</section>
+
+	<section class="info">
+		<div class="container flex">
+			<div class="text">
+				<h2 class="editable">Fordee's Tech Blog</h2>
+				<p class="editable">Musings from a developer who has spent way too much time with technology....</p>
+			</div>
+			<div class="image">
+				<img class="editable" src="/images/electronics.jpeg" alt="Electronics" />
+			</div>
+		</div>
+	</section>
+</div>
+<section class="pad">
+	<div class="container">
+		<p class="editor-link"><a href="cloudcannon:collections/_staff_members" class="btn"><strong>&#9998;</strong> Manage Staff Members</a></p>
+		<ul class="staff">
+			{% for person in site.staff_members %}
+				<li>
+					<div class="square-image" style="background-image: url({% include relative-src.html src=person.image_path %})"></div>
+					<div class="name"><a target="_blank" href="https://twitter.com/{{ person.twitter_username }}">{{ person.name }}</a></div>
+					<div class="position">{{ person.position }}</div>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</section>
