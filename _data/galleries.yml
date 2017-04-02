@@ -1,7 +1,7 @@
 - id: gallery
   imagefolder: /images/galleries/gallery-postcard
   heading: NZ Bird Postcard Collection
-  width: 400px
+  location: postcard
   images:
   - filename: NZBirdsPostcardCollection.Huia.png
     alttext: Huia
@@ -21,10 +21,13 @@
     alttext: Pukeko
   - filename: NZBirdsPostcardCollection.Tui.png
     alttext: Tui
+
+
 - id: gallery
   imagefolder: /images/galleries/gallery-nzbird
   heading: New Zealand Bird Collection
   width: 100px
+  location: nzbird
   images:
   - filename: NewZealandBirds.BellbirdsInKohai.png
     alttext: Bellbirds in Kohai

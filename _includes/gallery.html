@@ -2,8 +2,8 @@
 
     {% for gallery in site.data.galleries %}
       {% if gallery.id == page.gallery-id %}
-        <div class="text">
-
+        <div  class="text">
+          <a id="{{gallery.location}}" name="{{gallery.location}}"></a>
             <h2 class="editable">{{ gallery.heading }}</h2>
 
         </div>
