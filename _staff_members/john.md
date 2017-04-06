@@ -1,7 +1,7 @@
 ---
 name: John Forde
 position: Developer
-image_path: https://source.unsplash.com/collection/139386/600x600?a=.png
+image_path: /images/John.jpeg
 twitter_username: JCFordee
-blurb: John likes programming and electronics.
+blurb: Data architect by day and an iOS developer by night.
 ---
