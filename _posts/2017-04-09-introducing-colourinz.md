@@ -10,6 +10,8 @@ author_staff_member: john
 
 After many months of development, we are please to introduce Colourinz, a brand new coloring for adults app. Available now for iPad and iPhone on the App Store.
 
+[![App Store Badge](/images/AppStore.svg)](https://appsto.re/nz/V3bqhb.i)
+
 ## History
 Colourinz started as real world analog coloring for adults pictures sold on large paper. The designs where by Carl Van Wijk and the name Colourinz came from the spelling of colour in New Zealand (with the extra 'u') and NZ being home to Carl and John.
 
