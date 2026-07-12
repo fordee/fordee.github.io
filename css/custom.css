@@ -156,11 +156,41 @@
 }
 .feature-icon-image { font-size: 1.5rem; color: var(--primary-color); }
 
+/* ---------- Feature group labels & Free/Pro tags ---------- */
+.dd-group-head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin: 2.5rem 0 1.5rem;
+}
+.dd-group-head h3 { margin: 0; font-weight: 700; font-size: 1.4rem; }
+.dd-tag {
+  display: inline-block;
+  padding: 0.25rem 0.7rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 999px;
+}
+.dd-tag-free { color: var(--text-muted); background: var(--border-color); }
+.dd-tag-pro { color: #fff; background: var(--dd-gradient); }
+
 /* ---------- Pricing ---------- */
 .dd-pricing { padding: var(--section-padding); background: var(--section-surface-b); }
-.dd-price-card {
-  max-width: 460px;
+.dd-pricing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  max-width: 900px;
   margin: 0 auto;
+  align-items: stretch;
+}
+@media (max-width: 768px) { .dd-pricing-grid { grid-template-columns: 1fr; } }
+.dd-price-card {
+  display: flex;
+  flex-direction: column;
   text-align: center;
   padding: 2.5rem 2rem;
   background: var(--bg-card);
@@ -168,6 +198,16 @@
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
   position: relative;
+  height: 100%;
+}
+.dd-price-card .btn { margin-top: auto; }
+/* Free card: plain border, no gradient ring */
+.dd-price-card--free { box-shadow: var(--shadow-md); }
+.dd-price-card--free::before { display: none; }
+/* Free badge: muted, distinct from the Pro gradient badge */
+.dd-price-badge.dd-tag-free {
+  color: var(--text-muted);
+  background: var(--border-color);
 }
 .dd-price-card::before {
   content: "";
