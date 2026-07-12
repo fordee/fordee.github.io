@@ -3,26 +3,31 @@
   <head>
     <base href="./" />
     <meta property="og:site_name" content="Daily Decks" />
-    <meta property="og:title" content="Daily Decks" />
-    <meta name="twitter:title" content="Daily Decks" />
-    <meta property="og:url" content="4Dware.net/" />
+    <meta property="og:title" content="Daily Decks — Turn studying into remembering" />
+    <meta property="og:description" content="A private, Anki-compatible flashcard app with FSRS scheduling and on-device AI that turns your PDFs and notes into cards." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://fordee.github.io/" />
+    <meta property="og:image" content="https://fordee.github.io/images/app-icon-512.png" />
+    <meta name="twitter:title" content="Daily Decks — Turn studying into remembering" />
+    <meta name="twitter:description" content="A private, Anki-compatible flashcard app with FSRS scheduling and on-device AI card generation." />
+    <meta name="twitter:image" content="https://fordee.github.io/images/app-icon-512.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:dnt" content="on" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="Developer" />
-    <meta name="generator" content="Ignite v0.6.0" />
-    <title>Daily Decks</title>
+    <meta name="author" content="4Dware" />
+    <meta name="description" content="Daily Decks is a private, Anki-compatible flashcard app for iPhone with modern FSRS spaced repetition and on-device AI card generation. Turn studying into remembering." />
+    <title>Daily Decks — Turn studying into remembering</title>
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/bootstrap-icons.min.css" rel="stylesheet" />
     <link href="css/ignite-core.min.css" rel="stylesheet" />
-    <link href="4Dware.net/" rel="canonical" />
-    <link href="images/favicon.png" rel="icon" />
     <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/custom.css" rel="stylesheet" />
+    <link href="images/favicon-32.png" rel="icon" sizes="32x32" />
+    <link href="images/apple-touch-icon.png" rel="apple-touch-icon" />
+    <link href="https://fordee.github.io/" rel="canonical" />
     <style>
 :root {
-    --primary-color: #2563eb;
-    --primary-rgb: 37, 99, 235;
     --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     color-scheme: light dark;
 }
@@ -39,10 +44,9 @@
           <button type="button" class="navbar-toggler btn" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
           <div id="navbarCollapse" class="collapse navbar-collapse">
             <ul class="navbar-nav mb-2 mb-md-0 col justify-content-end">
-              <li class="nav-item"><a href="#screenshots" class="nav-link text-nowrap">Screenshots</a></li>
-              <li class="nav-item"><a href="#highlights" class="nav-link text-nowrap">Highlights</a></li>
+              <li class="nav-item"><a href="#how" class="nav-link text-nowrap">How it works</a></li>
               <li class="nav-item"><a href="#features" class="nav-link text-nowrap">Features</a></li>
-              <li class="nav-item"><a href="#reviews" class="nav-link text-nowrap">Reviews</a></li>
+              <li class="nav-item"><a href="#pricing" class="nav-link text-nowrap">Pricing</a></li>
               <li class="nav-item"><a href="#faq" class="nav-link text-nowrap">FAQ</a></li>
               <li class="nav-item"><a href="https://apps.apple.com/app/id6788131526" class="text-nowrap btn btn-sm btn-primary">Download</a></li>
             </ul>
@@ -52,178 +56,212 @@
     </header>
     <main class="site-main">
       <div class="ig-main-content">
+
+        <!-- Hero -->
         <div id="hero" class="hero hero-centered">
           <div class="container">
             <div class="hero-content">
-              <img src="images/app-icon.png" alt="App Icon" class="hero-app-icon" />
-              <h1 class="hero-title">Daily Decks lets you turn stuying into remembering</h1>
-              <p class="hero-subtitle">An Anki-compatible flashcard app that motivates you.</p>
-              <div class="hero-cta">
-                <a href="https://apps.apple.com/app/id6788131526" class="cta-button cta-button-primary btn btn-primary">Download Now</a>
+              <img src="images/app-icon-512.png" alt="Daily Decks app icon" class="hero-app-icon dd-rise" width="128" height="128" />
+              <h1 class="hero-title dd-rise dd-rise-2">Turn studying into <span class="dd-grad-text">remembering</span>.</h1>
+              <p class="hero-subtitle dd-rise dd-rise-3">A private, Anki-compatible flashcard app for iPhone — with modern spaced repetition and on-device AI that turns your notes into cards.</p>
+              <div class="hero-cta dd-rise dd-rise-4">
+                <a href="https://apps.apple.com/app/id6788131526" class="cta-button cta-button-primary btn btn-primary">Download on the App Store</a>
               </div>
-              <div class="hero-rating">
-                <div class="rating-stars">
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                </div>
-                <p class="rating-text"><span class="rating-count">(100 reviews)</span></p>
+              <div class="dd-badges dd-rise dd-rise-4">
+                <span class="dd-badge"><i class="bi-shield-lock-fill"></i> Private by design</span>
+                <span class="dd-badge"><i class="bi-wifi-off"></i> Works offline</span>
+                <span class="dd-badge"><i class="bi-infinity"></i> No subscription</span>
               </div>
             </div>
           </div>
         </div>
-        <div id="screenshots" class="screenshots-section screenshots-carousel">
+
+        <!-- How it works -->
+        <div id="how" class="features-section">
           <div class="container">
             <div class="section-header">
-              <h2>See It in Action</h2>
-              <p class="section-description">Beautiful screenshots showcasing your app's best features.</p>
+              <h2>Learn it once. Remember it for good.</h2>
+              <p class="section-description">Three steps from a pile of notes to lasting recall.</p>
             </div>
-            <div class="screenshots-container">
-              <div class="screenshots-scroll"></div>
+            <div class="dd-steps">
+              <div class="dd-step">
+                <div class="dd-step-num">1</div>
+                <h4>Add your cards</h4>
+                <p>Import your existing Anki decks, or let on-device AI turn PDFs, notes, and photos into ready-to-study cards.</p>
+              </div>
+              <div class="dd-step">
+                <div class="dd-step-num">2</div>
+                <h4>Study smart</h4>
+                <p>A modern FSRS scheduler shows each card at the exact moment you're about to forget it — fewer reviews, better recall.</p>
+              </div>
+              <div class="dd-step">
+                <div class="dd-step-num">3</div>
+                <h4>Remember for good</h4>
+                <p>Build daily streaks and watch your retention climb on a colourful stats heatmap.</p>
+              </div>
             </div>
           </div>
         </div>
+
+        <!-- Highlights -->
         <div id="highlights" class="highlights-section highlights-grid-multiple-of-three">
           <div class="container">
             <div class="section-header">
-              <h2>Why Choose Us</h2>
-              <p class="section-description">The key reasons users love our product.</p>
+              <h2>Why Daily Decks</h2>
+              <p class="section-description">Built for serious learners who care about their data.</p>
             </div>
             <div class="highlights-grid">
               <div class="highlight-card">
-                <h4 class="highlight-title">Anki Compatible</h4>
-                <p class="highlight-description">Import and export Anki decks effortlessly.</p>
+                <h4 class="highlight-title">Private by design</h4>
+                <p class="highlight-description">AI runs on-device with Apple Intelligence, and sync uses your own iCloud. Your study data never touches our servers.</p>
               </div>
               <div class="highlight-card">
-                <h4 class="highlight-title">Streak Monitor</h4>
-                <p class="highlight-description">Stay motivated with streak tracking.</p>
+                <h4 class="highlight-title">Proven memory science</h4>
+                <p class="highlight-description">FSRS v5 and classic SM-2 scheduling squeeze maximum retention from minimum review time.</p>
               </div>
               <div class="highlight-card">
-                <h4 class="highlight-title">Generate Image Occlusion Cards</h4>
-                <p class="highlight-description">An image occlusion generator that quickly creates cards from your study materials.</p>
+                <h4 class="highlight-title">Bring your whole library</h4>
+                <p class="highlight-description">Import Anki .apkg files and AnkiWeb decks — media, formatting, and scheduling intact.</p>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- Features -->
         <div id="features" class="features-section features-grid-layout features-grid-auto">
           <div class="container">
             <div class="section-header">
-              <h2>Powerful Features</h2>
-              <p class="section-description">Everything you need to get things done.</p>
+              <h2>Everything you need to study well</h2>
+              <p class="section-description">Powerful where it counts, calm everywhere else.</p>
             </div>
             <div class="features-grid">
               <div class="feature-card">
-                <div class="feature-icon">
-                  <i class="feature-icon-image bi-lightning-charge-fill"></i>
-                </div>
-                <h4 class="feature-title">Import Anki decks</h4>
-                <p class="feature-description">Effortlessly import and organize your favorite Anki decks for a seamless study experience.</p>
+                <div class="feature-icon"><i class="feature-icon-image bi-stars"></i></div>
+                <h4 class="feature-title">On-device AI card generation</h4>
+                <p class="feature-description">Drop in a PDF, lecture notes, or an image and get draft cards in seconds — processed entirely on your device.</p>
               </div>
               <div class="feature-card">
-                <div class="feature-icon">
-                  <i class="feature-icon-image bi-shield-check"></i>
-                </div>
-                <h4 class="feature-title">Streak monitor</h4>
-                <p class="feature-description">Stay motivated with a streak monitor that rewards you for consistent studying.</p>
+                <div class="feature-icon"><i class="feature-icon-image bi-clock-history"></i></div>
+                <h4 class="feature-title">Smart FSRS scheduling</h4>
+                <p class="feature-description">The latest FSRS v5 algorithm (and SM-2 if you prefer) times every review for the moment just before you'd forget.</p>
               </div>
               <div class="feature-card">
-                <div class="feature-icon">
-                  <i class="feature-icon-image bi-graph-up-arrow"></i>
-                </div>
-                <h4 class="feature-title">Stats and retention heat map</h4>
-                <p class="feature-description">Gain insights into your study performance with a visual heat map.</p>
+                <div class="feature-icon"><i class="feature-icon-image bi-box-arrow-in-down"></i></div>
+                <h4 class="feature-title">Anki import &amp; export</h4>
+                <p class="feature-description">Move your collection in from Anki or AnkiWeb, and export any time. Your decks are always yours.</p>
               </div>
               <div class="feature-card">
-                <div class="feature-icon">
-                  <i class="feature-icon-image bi-star-fill"></i>
-                </div>
-                <h4 class="feature-title">Image occlusion card generation</h4>
-                <p class="feature-description">Engage your brain with visually stimulating cards that challenge your memory.</p>
+                <div class="feature-icon"><i class="feature-icon-image bi-crop"></i></div>
+                <h4 class="feature-title">Image occlusion</h4>
+                <p class="feature-description">Turn diagrams and screenshots into hide-and-reveal cards — manually or automatically.</p>
               </div>
               <div class="feature-card">
-                <div class="feature-icon">
-                  <i class="feature-icon-image bi-shield-check"></i>
-                </div>
-                <h4 class="feature-title">Support math and formulas</h4>
-                <p class="feature-description">Use MathJax and LaTeX to create and solve complex equations with ease.</p>
+                <div class="feature-icon"><i class="feature-icon-image bi-calculator"></i></div>
+                <h4 class="feature-title">Math &amp; science ready</h4>
+                <p class="feature-description">Beautiful MathJax and LaTeX rendering for formulas, equations, and chemistry.</p>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon"><i class="feature-icon-image bi-icloud-fill"></i></div>
+                <h4 class="feature-title">iCloud sync</h4>
+                <p class="feature-description">Pick up on any device, always in sync through your personal iCloud account.</p>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon"><i class="feature-icon-image bi-fire"></i></div>
+                <h4 class="feature-title">Streaks that motivate</h4>
+                <p class="feature-description">Keep your momentum with daily streaks and streak freezes for the days life gets in the way.</p>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon"><i class="feature-icon-image bi-graph-up-arrow"></i></div>
+                <h4 class="feature-title">Stats &amp; retention heatmap</h4>
+                <p class="feature-description">See exactly how your memory is trending with clear charts and a retention heatmap.</p>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon"><i class="feature-icon-image bi-app-indicator"></i></div>
+                <h4 class="feature-title">Home screen widgets</h4>
+                <p class="feature-description">Your due count and streak, one glance away — a gentle nudge to keep going.</p>
               </div>
             </div>
           </div>
         </div>
-        <div id="reviews" class="testimonials-section testimonials-carousel">
+
+        <!-- Pricing -->
+        <div id="pricing" class="dd-pricing">
           <div class="container">
             <div class="section-header">
-              <h2>What Users Say</h2>
-              <p class="section-description">Read reviews posted on the App Store.</p>
+              <h2>Simple pricing. No subscription.</h2>
+              <p class="section-description">Everything you need to study is free. Unlock the extras once, forever.</p>
             </div>
-            <div class="testimonials-scroll"></div>
+            <div class="dd-price-card">
+              <span class="dd-price-badge">Daily Decks Pro</span>
+              <div class="dd-price">$14.99 <small>one-time</small></div>
+              <ul class="dd-price-list">
+                <li><i class="bi-check-circle-fill"></i> <span><strong>On-device AI</strong> card generation from PDFs, notes &amp; images</span></li>
+                <li><i class="bi-check-circle-fill"></i> <span><strong>iCloud sync</strong> across all your devices</span></li>
+                <li><i class="bi-check-circle-fill"></i> <span>Family Sharing included</span></li>
+              </ul>
+              <p class="text-muted" style="font-size:0.9rem;margin-bottom:1.25rem;">Free forever: Anki import, unlimited decks &amp; cards, FSRS v5 &amp; SM-2, stats, widgets, and streaks.</p>
+              <a href="https://apps.apple.com/app/id6788131526" class="btn btn-primary">Get Daily Decks</a>
+            </div>
           </div>
         </div>
+
+        <!-- FAQ -->
         <div id="faq" class="faq-section">
           <div class="container">
             <div class="section-header">
-              <h2>Frequently Asked Questions</h2>
-              <p class="section-description">Find answers to common questions.</p>
+              <h2>Frequently asked questions</h2>
+              <p class="section-description">Everything else you might be wondering.</p>
             </div>
             <div class="faq-content faq-accordion-layout">
-              <div id="accordiondIbOq" class="faq-accordion accordion">
+              <div id="faqAccordion" class="faq-accordion accordion">
                 <div class="accordion-item">
-                  <h2 class="accordion-header"><button type="button" class="accordion-button collapsed btn" data-bs-toggle="collapse" data-bs-target="#accordiondIbOq-item4AFeJ" aria-expanded="false" aria-controls="accordiondIbOq-item4AFeJ">How do I import an Anki deck into the app?</button></h2>
-                  <div id="accordiondIbOq-item4AFeJ" class="accordion-collapse collapse" data-bs-parent="#accordiondIbOq">
-                    <div class="accordion-body">
-                      <p class="faq-answer">Either copy your decks to your iCloud files and import into Daily Decks, or download from AnkiWeb</p>
-                    </div>
+                  <h2 class="accordion-header"><button type="button" class="accordion-button collapsed btn" data-bs-toggle="collapse" data-bs-target="#faq-1" aria-expanded="false" aria-controls="faq-1">How do I import an Anki deck?</button></h2>
+                  <div id="faq-1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body"><p class="faq-answer">Copy your <code>.apkg</code> file into iCloud Files and import it into Daily Decks, or download a deck directly from AnkiWeb. Media and scheduling come across with it.</p></div>
                   </div>
                 </div>
                 <div class="accordion-item">
-                  <h2 class="accordion-header"><button type="button" class="accordion-button collapsed btn" data-bs-toggle="collapse" data-bs-target="#accordiondIbOq-itemmBkPp" aria-expanded="false" aria-controls="accordiondIbOq-itemmBkPp">Can I use the app offline?</button></h2>
-                  <div id="accordiondIbOq-itemmBkPp" class="accordion-collapse collapse" data-bs-parent="#accordiondIbOq">
-                    <div class="accordion-body">
-                      <p class="faq-answer">Yes, the pro version supports offline AI card generation and iCloud sync, so you can study without an internet connection.</p>
-                    </div>
+                  <h2 class="accordion-header"><button type="button" class="accordion-button collapsed btn" data-bs-toggle="collapse" data-bs-target="#faq-2" aria-expanded="false" aria-controls="faq-2">Is my data private?</button></h2>
+                  <div id="faq-2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body"><p class="faq-answer">Yes. AI card generation runs entirely on your device, and sync uses your own iCloud account. We don't collect, see, or store your study content. Read our <a href="privacy.html">Privacy Policy</a>.</p></div>
                   </div>
                 </div>
                 <div class="accordion-item">
-                  <h2 class="accordion-header"><button type="button" class="accordion-button collapsed btn" data-bs-toggle="collapse" data-bs-target="#accordiondIbOq-item8fCBX" aria-expanded="false" aria-controls="accordiondIbOq-item8fCBX">What is the streak monitor, and how does it work?</button></h2>
-                  <div id="accordiondIbOq-item8fCBX" class="accordion-collapse collapse" data-bs-parent="#accordiondIbOq">
-                    <div class="accordion-body">
-                      <p class="faq-answer">The streak monitor keeps track of your study streaks, motivating you to continue studying consistently and improving your retention.</p>
-                    </div>
+                  <h2 class="accordion-header"><button type="button" class="accordion-button collapsed btn" data-bs-toggle="collapse" data-bs-target="#faq-3" aria-expanded="false" aria-controls="faq-3">Can I use it offline?</button></h2>
+                  <div id="faq-3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body"><p class="faq-answer">Absolutely. Studying works offline, and even AI card generation runs on-device — no internet required.</p></div>
                   </div>
                 </div>
                 <div class="accordion-item">
-                  <h2 class="accordion-header"><button type="button" class="accordion-button collapsed btn" data-bs-toggle="collapse" data-bs-target="#accordiondIbOq-item8Euum" aria-expanded="false" aria-controls="accordiondIbOq-item8Euum">Does the app support math and science formulas?</button></h2>
-                  <div id="accordiondIbOq-item8Euum" class="accordion-collapse collapse" data-bs-parent="#accordiondIbOq">
-                    <div class="accordion-body">
-                      <p class="faq-answer">Yes, the app supports mathJax and LaTeX for displaying and studying formulas.</p>
-                    </div>
+                  <h2 class="accordion-header"><button type="button" class="accordion-button collapsed btn" data-bs-toggle="collapse" data-bs-target="#faq-4" aria-expanded="false" aria-controls="faq-4">What's the difference between free and Pro?</button></h2>
+                  <div id="faq-4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body"><p class="faq-answer">Everything core is free: Anki import, unlimited decks, FSRS v5 &amp; SM-2 scheduling, stats, widgets, and streaks. A one-time Daily Decks Pro purchase adds on-device AI card generation and iCloud sync.</p></div>
                   </div>
                 </div>
                 <div class="accordion-item">
-                  <h2 class="accordion-header"><button type="button" class="accordion-button collapsed btn" data-bs-toggle="collapse" data-bs-target="#accordiondIbOq-itemhHf21" aria-expanded="false" aria-controls="accordiondIbOq-itemhHf21">How do I create image occlusion cards?</button></h2>
-                  <div id="accordiondIbOq-itemhHf21" class="accordion-collapse collapse" data-bs-parent="#accordiondIbOq">
-                    <div class="accordion-body">
-                      <p class="faq-answer">Select Generate Cards with Image Occlusion from the menu, scan an image or select a photo then create the occlusions, either manually, or automatically.</p>
-                    </div>
+                  <h2 class="accordion-header"><button type="button" class="accordion-button collapsed btn" data-bs-toggle="collapse" data-bs-target="#faq-5" aria-expanded="false" aria-controls="faq-5">Does it support math and science?</button></h2>
+                  <div id="faq-5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body"><p class="faq-answer">Yes — Daily Decks renders MathJax and LaTeX, so formulas, equations, and chemistry look great on your cards.</p></div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- Download CTA -->
         <div id="download" class="download-section">
           <div class="container">
             <div class="download-content">
-              <h2>Flashcard Mastery Now!</h2>
-              <p class="download-description">Transform your study sessions with our powerful flashcard app.</p>
+              <h2>Start remembering more today.</h2>
+              <p class="download-description">Free to download. No account required.</p>
               <div class="store-badges">
                 <a href="https://apps.apple.com/app/id6788131526" class="store-badge-link"><img src="images/app-store-download-black.svg" alt="Download on the App Store" class="store-badge store-badge-light-mode" /><img src="images/app-store-download-white.svg" alt="Download on the App Store" class="store-badge store-badge-dark-mode" /></a>
               </div>
             </div>
           </div>
         </div>
+
       </div>
     </main>
     <div class="site-footer">
@@ -234,8 +272,7 @@
           </div>
         </div>
         <div class="footer-copyright">
-          <p>Copyright 2026 Daily Decks. All rights reserved.</p>
-          <a href="https://kickstart.tools" class="footer-kickstart-link">Built with Kickstart</a>
+          <p>Copyright 2026 Daily Decks. All rights reserved. · <a href="privacy.html">Privacy Policy</a> · <a href="mailto:fordee@icloud.com">Contact</a></p>
         </div>
       </div>
     </div>
