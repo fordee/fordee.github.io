@@ -65,14 +65,24 @@
   border-radius: 24px;
   box-shadow: 0 24px 60px rgba(109, 71, 230, 0.45), 0 4px 14px rgba(0, 0, 0, 0.18);
 }
-.hero-title {
+.hero-wordmark {
+  margin: 0.9rem 0 0.4rem;
   font-weight: 800;
-  letter-spacing: -0.02em;
-  line-height: 1.08;
-  font-size: clamp(2.1rem, 5.2vw, 3.6rem);
-  max-width: 15ch;
+  letter-spacing: 0.01em;
+  font-size: clamp(1.9rem, 5vw, 2.9rem);
+  line-height: 1.05;
+  color: var(--text-dark);
+}
+.hero-title {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.12;
+  font-size: clamp(1.5rem, 3.4vw, 2.3rem);
+  max-width: 20ch;
   margin-inline: auto;
 }
+/* Make the app name in the nav a bit more prominent */
+.site-header .brand-name { font-size: 1.3rem; font-weight: 800; }
 .hero-title .dd-grad-text {
   background: var(--dd-gradient);
   -webkit-background-clip: text;
