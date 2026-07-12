@@ -319,6 +319,43 @@
 .dd-arrow-prev { left: -6px; }
 .dd-arrow-next { right: -6px; }
 @media (max-width: 768px) { .dd-arrow { display: none; } }
+
+/* Fade hints at the carousel edges (signals more content) */
+.dd-carousel::before,
+.dd-carousel::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 1.5rem;
+  width: 44px;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+}
+.dd-carousel::before { left: 0; background: linear-gradient(to right, var(--bg-page), transparent); }
+.dd-carousel::after { right: 0; background: linear-gradient(to left, var(--bg-page), transparent); }
+.dd-carousel.at-start::before { opacity: 0; }
+.dd-carousel.at-end::after { opacity: 0; }
+
+/* Dot indicators */
+.dd-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+.dd-dot {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--border-color);
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.dd-dot.is-active { background: var(--dd-gradient); transform: scale(1.3); }
 .dd-shot img {
   width: 100%;
   height: auto;
