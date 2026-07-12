@@ -275,19 +275,50 @@
 
 /* ---------- Screenshots carousel ---------- */
 .dd-shots-section { padding: var(--section-padding); }
+.dd-carousel { position: relative; }
 .dd-shots {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem 1.75rem;
-  justify-content: center;
-  padding: 0.5rem 0 1.5rem;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding: 0.5rem 0.25rem 1.5rem;
+  scrollbar-width: none;
 }
+.dd-shots::-webkit-scrollbar { display: none; }
 .dd-shot {
   flex: 0 0 auto;
-  width: clamp(160px, 42vw, 210px);
+  width: clamp(210px, 70vw, 240px);
+  scroll-snap-align: center;
   margin: 0;
   text-align: center;
 }
+/* Prev/next arrows (desktop); mobile relies on swipe */
+.dd-arrow {
+  position: absolute;
+  top: 44%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--primary-color);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  z-index: 2;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+.dd-arrow:hover { background: var(--dd-gradient); color: #fff; transform: translateY(-50%) scale(1.06); }
+.dd-arrow-prev { left: -6px; }
+.dd-arrow-next { right: -6px; }
+@media (max-width: 768px) { .dd-arrow { display: none; } }
 .dd-shot img {
   width: 100%;
   height: auto;
