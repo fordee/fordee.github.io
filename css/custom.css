@@ -244,18 +244,14 @@
 .dd-shots-section { padding: var(--section-padding); }
 .dd-shots {
   display: flex;
-  gap: 1.75rem;
+  flex-wrap: wrap;
+  gap: 1.5rem 1.75rem;
   justify-content: center;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding: 0.5rem 1rem 1.5rem;
-  scrollbar-width: none;
+  padding: 0.5rem 0 1.5rem;
 }
-.dd-shots::-webkit-scrollbar { display: none; }
 .dd-shot {
-  scroll-snap-align: center;
   flex: 0 0 auto;
-  width: 232px;
+  width: clamp(160px, 42vw, 210px);
   margin: 0;
   text-align: center;
 }
