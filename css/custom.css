@@ -235,6 +235,7 @@
 }
 .dd-price { font-size: 3rem; font-weight: 800; letter-spacing: -0.02em; }
 .dd-price small { font-size: 1rem; font-weight: 600; color: var(--text-muted); }
+.dd-price-note { margin: 0.35rem 0 0; font-size: 0.8rem; color: var(--text-muted); }
 .dd-price-list { list-style: none; padding: 0; margin: 1.5rem 0; text-align: left; }
 .dd-price-list li { padding: 0.4rem 0; display: flex; gap: 0.6rem; align-items: flex-start; }
 .dd-price-list li i { color: var(--primary-color); margin-top: 0.15rem; }
