@@ -22,7 +22,7 @@
     <link href="css/bootstrap-icons.min.css" rel="stylesheet" />
     <link href="css/ignite-core.min.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
-    <link href="css/custom.css?v=8" rel="stylesheet" />
+    <link href="css/custom.css?v=9" rel="stylesheet" />
     <link href="images/favicon-32.png" rel="icon" sizes="32x32" />
     <link href="images/apple-touch-icon.png" rel="apple-touch-icon" />
     <link href="https://fordee.github.io/" rel="canonical" />
@@ -113,6 +113,7 @@
               </div>
               <button type="button" class="dd-arrow dd-arrow-next" aria-label="Next screenshot">›</button>
             </div>
+            <div class="dd-dots" aria-hidden="true"></div>
           </div>
         </div>
 
@@ -340,17 +341,54 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/ignite-core.js"></script>
     <script>
-      // Screenshot carousel arrows (native swipe/scroll handles touch)
+      // Screenshot carousel: arrows, dot indicators, and edge-fade state.
       (function () {
+        var carousel = document.querySelector('#screenshots .dd-carousel');
         var track = document.querySelector('#screenshots .dd-shots');
+        var dotsWrap = document.querySelector('#screenshots .dd-dots');
         if (!track) return;
+        var cards = Array.prototype.slice.call(track.querySelectorAll('.dd-shot'));
+
+        // Arrows scroll by one card.
         document.querySelectorAll('#screenshots .dd-arrow').forEach(function (btn) {
           btn.addEventListener('click', function () {
-            var card = track.querySelector('.dd-shot');
-            var step = card ? card.getBoundingClientRect().width + 24 : track.clientWidth * 0.8;
+            var step = cards[0] ? cards[0].getBoundingClientRect().width + 24 : track.clientWidth * 0.8;
             track.scrollBy({ left: btn.classList.contains('dd-arrow-next') ? step : -step, behavior: 'smooth' });
           });
         });
+
+        // Build one dot per slide; click scrolls that slide into view.
+        cards.forEach(function (card, i) {
+          var dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = 'dd-dot';
+          dot.setAttribute('aria-label', 'Go to screenshot ' + (i + 1));
+          dot.addEventListener('click', function () {
+            var left = card.getBoundingClientRect().left - track.getBoundingClientRect().left
+              + track.scrollLeft - (track.clientWidth - card.clientWidth) / 2;
+            track.scrollTo({ left: left, behavior: 'smooth' });
+          });
+          dotsWrap.appendChild(dot);
+        });
+        var dots = Array.prototype.slice.call(dotsWrap.querySelectorAll('.dd-dot'));
+
+        function update() {
+          var tRect = track.getBoundingClientRect();
+          var center = tRect.left + tRect.width / 2;
+          var active = 0, best = Infinity;
+          cards.forEach(function (c, i) {
+            var r = c.getBoundingClientRect();
+            var dist = Math.abs(r.left + r.width / 2 - center);
+            if (dist < best) { best = dist; active = i; }
+          });
+          dots.forEach(function (d, i) { d.classList.toggle('is-active', i === active); });
+          // Edge fades: hide the fade at whichever end we've reached.
+          carousel.classList.toggle('at-start', track.scrollLeft <= 2);
+          carousel.classList.toggle('at-end', track.scrollLeft + track.clientWidth >= track.scrollWidth - 2);
+        }
+        track.addEventListener('scroll', function () { window.requestAnimationFrame(update); });
+        window.addEventListener('resize', update);
+        update();
       })();
     </script>
   </body>
