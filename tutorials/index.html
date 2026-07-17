@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en" data-light-theme="light" data-dark-theme="dark">
+  <head>
+    <base href="/" />
+    <meta property="og:site_name" content="Daily Decks" />
+    <meta property="og:title" content="Daily Decks — Tutorials" />
+    <meta property="og:description" content="Short how-to videos for getting the most out of Daily Decks — importing decks, generating cards with on-device AI, and more." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.4dware.net/tutorials/" />
+    <meta property="og:image" content="https://www.4dware.net/images/app-icon-512.png" />
+    <meta name="twitter:title" content="Daily Decks — Tutorials" />
+    <meta name="twitter:description" content="Short how-to videos for getting the most out of Daily Decks." />
+    <meta name="twitter:image" content="https://www.4dware.net/images/app-icon-512.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:dnt" content="on" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="4Dware" />
+    <meta name="description" content="Short how-to videos for getting the most out of Daily Decks — importing decks, generating cards with on-device AI, and studying with FSRS." />
+    <title>Daily Decks — Tutorials</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="css/ignite-core.min.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/custom.css?v=10" rel="stylesheet" />
+    <link href="images/favicon-32.png" rel="icon" sizes="32x32" />
+    <link href="images/apple-touch-icon.png" rel="apple-touch-icon" />
+    <link href="https://www.4dware.net/tutorials/" rel="canonical" />
+    <style>
+:root {
+    --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color-scheme: light dark;
+}
+/* Tutorials grid — one card per how-to video. */
+.dd-tutorials { display: grid; gap: 2rem; grid-template-columns: 1fr; margin-top: 2.5rem; }
+@media (min-width: 768px) { .dd-tutorials { grid-template-columns: repeat(2, 1fr); } }
+.dd-tut-card {
+  margin: 0;
+  border: 1px solid var(--border-color, rgba(128,128,128,.25));
+  border-radius: var(--radius-lg, 1rem);
+  overflow: hidden;
+  background: var(--bg-card, rgba(128,128,128,.06));
+}
+/* Video sits in a 16:9 frame; swap the ratio if your clips are portrait (e.g. 9 / 16). */
+.dd-tut-video { position: relative; aspect-ratio: 16 / 9; background: rgba(128,128,128,.12); }
+.dd-tut-video video { width: 100%; height: 100%; object-fit: contain; display: block; background: #000; }
+.dd-tut-card figcaption { padding: 1.1rem 1.35rem 1.35rem; }
+.dd-tut-card h3 { margin: 0 0 .4rem; font-size: 1.2rem; }
+.dd-tut-card p { margin: 0; color: var(--text-muted, #6c757d); }
+</style>
+    <meta name="apple-itunes-app" content="app-id=6788131526" />
+  </head>
+  <body data-site-classes="site-shell">
+    <!-- TEMPORARY BETA BANNER — remove after beta testing -->
+    <a class="dd-beta-banner" href="https://testflight.apple.com/join/zHg8jw8d">🧪 Currently testing with TestFlight — <span class="dd-beta-cta">click here to access the beta</span></a>
+    <header>
+      <nav class="site-header navbar navbar-expand-md">
+        <div class="container flex-wrap flex-lg-nowrap">
+          <div class="me-2 me-md-auto">
+            <a href="/" class="brand-link d-inline-flex align-items-center navbar-brand"><span class="brand-name">Daily Decks</span></a>
+          </div>
+          <button type="button" class="navbar-toggler btn" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+          <div id="navbarCollapse" class="collapse navbar-collapse">
+            <ul class="navbar-nav mb-2 mb-md-0 col justify-content-end">
+              <li class="nav-item"><a href="/#screenshots" class="nav-link text-nowrap">Screenshots</a></li>
+              <li class="nav-item"><a href="/#how" class="nav-link text-nowrap">How it works</a></li>
+              <li class="nav-item"><a href="/#features" class="nav-link text-nowrap">Features</a></li>
+              <li class="nav-item"><a href="/#pricing" class="nav-link text-nowrap">Pricing</a></li>
+              <li class="nav-item"><a href="/#faq" class="nav-link text-nowrap">FAQ</a></li>
+              <li class="nav-item"><a href="tutorials/" class="nav-link text-nowrap active" aria-current="page">Tutorials</a></li>
+              <li class="nav-item"><a href="https://testflight.apple.com/join/zHg8jw8d" class="text-nowrap btn btn-sm btn-primary">Join the beta</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="site-main">
+      <div class="ig-main-content">
+
+        <div class="features-section">
+          <div class="container">
+            <div class="section-header">
+              <h2>Tutorials</h2>
+              <p class="section-description">Short how-to videos for getting the most out of Daily Decks.</p>
+            </div>
+
+            <!--
+              Each card streams its video from Cloudflare R2 (media.4dware.net).
+              To publish a tutorial:
+                1. Upload the .mp4 to the bucket, e.g. videos/tutorials/getting-started.mp4
+                2. (Optional) add a poster image at images/tutorials/getting-started.jpg
+              Duplicate a <figure class="dd-tut-card"> block for each new tutorial.
+              If your clips are portrait screen recordings, change `aspect-ratio` in the
+              .dd-tut-video rule above to `9 / 16`.
+            -->
+            <div class="dd-tutorials">
+
+              <figure class="dd-tut-card">
+                <div class="dd-tut-video">
+                  <video controls playsinline preload="metadata" poster="images/tutorials/getting-started.jpg">
+                    <source src="https://media.4dware.net/videos/tutorials/getting-started.mp4" type="video/mp4" />
+                    Your browser doesn’t support embedded video.
+                  </video>
+                </div>
+                <figcaption>
+                  <h3>Getting started</h3>
+                  <p>Create your first deck, add cards, and run your first study session.</p>
+                </figcaption>
+              </figure>
+
+              <figure class="dd-tut-card">
+                <div class="dd-tut-video">
+                  <video controls playsinline preload="metadata" poster="images/tutorials/import-anki.jpg">
+                    <source src="https://media.4dware.net/videos/tutorials/import-anki.mp4" type="video/mp4" />
+                    Your browser doesn’t support embedded video.
+                  </video>
+                </div>
+                <figcaption>
+                  <h3>Import an Anki deck</h3>
+                  <p>Bring your existing collection in from an .apkg file or straight from AnkiWeb.</p>
+                </figcaption>
+              </figure>
+
+              <figure class="dd-tut-card">
+                <div class="dd-tut-video">
+                  <video controls playsinline preload="metadata" poster="images/tutorials/generate-ai.jpg">
+                    <source src="https://media.4dware.net/videos/tutorials/generate-ai.mp4" type="video/mp4" />
+                    Your browser doesn’t support embedded video.
+                  </video>
+                </div>
+                <figcaption>
+                  <h3>Generate cards with on-device AI</h3>
+                  <p>Turn a PDF or your study notes into ready-to-review cards, all on your device.</p>
+                </figcaption>
+              </figure>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+    <div class="site-footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <p class="footer-tagline">Turn studying into remembering.</p>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <p>Copyright 2026 Daily Decks. All rights reserved. · <a href="privacy.html">Privacy Policy</a> · <a href="mailto:fordee@icloud.com">Contact</a></p>
+        </div>
+      </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/ignite-core.js"></script>
+  </body>
+</html>
