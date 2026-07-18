@@ -31,6 +31,25 @@
     --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     color-scheme: light dark;
 }
+/* Promo video grid — landscape 16:9 feature clips. */
+.dd-promos { display: grid; gap: 1.75rem; grid-template-columns: 1fr; margin-top: 2.5rem; }
+@media (min-width: 768px) { .dd-promos { grid-template-columns: repeat(2, 1fr); } }
+.dd-promo-card {
+  margin: 0;
+  border: 1px solid var(--border-color, rgba(128,128,128,.25));
+  border-radius: var(--radius-lg, 1rem);
+  overflow: hidden;
+  background: var(--bg-card, rgba(128,128,128,.06));
+}
+.dd-promo-video { position: relative; aspect-ratio: 16 / 9; background: rgba(128,128,128,.12); }
+.dd-promo-video video { width: 100%; height: 100%; object-fit: contain; display: block; background: #000; }
+.dd-promo-soon {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  color: var(--text-muted, #6c757d); font-weight: 600; letter-spacing: .02em;
+}
+.dd-promo-card figcaption { padding: 1.1rem 1.35rem 1.35rem; }
+.dd-promo-card h3 { margin: 0 0 .4rem; font-size: 1.2rem; }
+.dd-promo-card p { margin: 0; color: var(--text-muted, #6c757d); }
 </style>
     <meta name="apple-itunes-app" content="app-id=6788131526" />
   </head>
@@ -47,6 +66,7 @@
           <div id="navbarCollapse" class="collapse navbar-collapse">
             <ul class="navbar-nav mb-2 mb-md-0 col justify-content-end">
               <li class="nav-item"><a href="#screenshots" class="nav-link text-nowrap">Screenshots</a></li>
+              <li class="nav-item"><a href="#videos" class="nav-link text-nowrap">Videos</a></li>
               <li class="nav-item"><a href="#how" class="nav-link text-nowrap">How it works</a></li>
               <li class="nav-item"><a href="#features" class="nav-link text-nowrap">Features</a></li>
               <li class="nav-item"><a href="#pricing" class="nav-link text-nowrap">Pricing</a></li>
@@ -115,6 +135,80 @@
               <button type="button" class="dd-arrow dd-arrow-next" aria-label="Next screenshot">›</button>
             </div>
             <div class="dd-dots" aria-hidden="true"></div>
+          </div>
+        </div>
+
+        <!-- Promo videos -->
+        <div id="videos" class="features-section">
+          <div class="container">
+            <div class="section-header">
+              <h2>Watch Daily Decks in action</h2>
+              <p class="section-description">Short clips showing off what the app can do.</p>
+            </div>
+
+            <!--
+              Promo clips stream from Cloudflare R2 (media.4dware.net).
+              To publish one: upload the H.264 .mp4 to videos/promo/<key>.mp4, then
+              replace that card's .dd-promo-soon placeholder with a <video> block
+              (see the W2 / Image Occlusion card for the pattern). Optional poster
+              at images/promo/<key>.jpg.
+            -->
+            <div class="dd-promos">
+
+              <figure class="dd-promo-card">
+                <div class="dd-promo-video">
+                  <span class="dd-promo-soon">Coming soon</span>
+                </div>
+                <figcaption>
+                  <h3>Overview</h3>
+                  <p>A quick tour of Daily Decks — from decks to studying to stats.</p>
+                </figcaption>
+              </figure>
+
+              <figure class="dd-promo-card">
+                <div class="dd-promo-video">
+                  <span class="dd-promo-soon">Coming soon</span>
+                </div>
+                <figcaption>
+                  <h3>On-device AI generation</h3>
+                  <p>Turn a PDF or your study notes into ready-to-review cards, all on your device.</p>
+                </figcaption>
+              </figure>
+
+              <figure class="dd-promo-card">
+                <div class="dd-promo-video">
+                  <video controls playsinline preload="metadata" poster="images/promo/image-occlusion.jpg">
+                    <source src="https://media.4dware.net/videos/promo/w3-image-occlusion.mp4" type="video/mp4" />
+                    Your browser doesn’t support embedded video.
+                  </video>
+                </div>
+                <figcaption>
+                  <h3>Image occlusion</h3>
+                  <p>Turn diagrams and screenshots into hide-and-reveal cards.</p>
+                </figcaption>
+              </figure>
+
+              <figure class="dd-promo-card">
+                <div class="dd-promo-video">
+                  <span class="dd-promo-soon">Coming soon</span>
+                </div>
+                <figcaption>
+                  <h3>Anki import &amp; export</h3>
+                  <p>Bring your Anki collection in — media and scheduling intact — and export any time.</p>
+                </figcaption>
+              </figure>
+
+              <figure class="dd-promo-card">
+                <div class="dd-promo-video">
+                  <span class="dd-promo-soon">Coming soon</span>
+                </div>
+                <figcaption>
+                  <h3>Streaks &amp; retention heatmap</h3>
+                  <p>Build daily streaks and watch your retention climb on a colourful heatmap.</p>
+                </figcaption>
+              </figure>
+
+            </div>
           </div>
         </div>
 
