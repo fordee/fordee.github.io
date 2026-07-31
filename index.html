@@ -1,488 +1,82 @@
 <!doctype html>
 <html lang="en" data-light-theme="light" data-dark-theme="dark">
   <head>
-    <base href="./" />
-    <meta property="og:site_name" content="Daily Decks" />
-    <meta property="og:title" content="Daily Decks — Turn studying into remembering" />
-    <meta property="og:description" content="An Anki-compatible flashcard app with FSRS spaced repetition and private, on-device AI that turns your PDFs and study notes into cards." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.4dware.net/" />
-    <meta property="og:image" content="https://www.4dware.net/images/app-icon-512.png" />
-    <meta name="twitter:title" content="Daily Decks — Turn studying into remembering" />
-    <meta name="twitter:description" content="An Anki-compatible flashcard app with FSRS spaced repetition and private, on-device AI card generation." />
-    <meta name="twitter:image" content="https://www.4dware.net/images/app-icon-512.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:dnt" content="on" />
+    <base href="/" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="4Dware" />
-    <meta name="description" content="Daily Decks is an Anki-compatible flashcard app for iPhone with modern FSRS spaced repetition and private, on-device AI card generation. Turn studying into remembering." />
-    <title>Daily Decks — Turn studying into remembering</title>
+    <meta name="description" content="4Dware makes thoughtful iPhone apps — Daily Decks, a private Anki-compatible flashcard app, and Welly Metro, a Wellington commuter app." />
+    <meta property="og:site_name" content="4Dware" />
+    <meta property="og:title" content="4Dware" />
+    <meta property="og:description" content="Thoughtful iPhone apps — Daily Decks and Welly Metro." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.4dware.net/" />
+    <title>4Dware — Daily Decks and Welly Metro</title>
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/bootstrap-icons.min.css" rel="stylesheet" />
     <link href="css/ignite-core.min.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
     <link href="css/custom.css?v=10" rel="stylesheet" />
     <link href="images/favicon-32.png" rel="icon" sizes="32x32" />
-    <link href="images/apple-touch-icon.png" rel="apple-touch-icon" />
     <link href="https://www.4dware.net/" rel="canonical" />
     <style>
 :root {
     --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     color-scheme: light dark;
 }
-/* Promo video grid — landscape 16:9 feature clips. */
-.dd-promos { display: grid; gap: 1.75rem; grid-template-columns: 1fr; margin-top: 2.5rem; }
-@media (min-width: 768px) { .dd-promos { grid-template-columns: repeat(2, 1fr); } }
-.dd-promo-card {
-  margin: 0;
-  border: 1px solid var(--border-color, rgba(128,128,128,.25));
+.legal-content { max-width: 760px; margin: 0 auto; padding: 3rem 1rem 4rem; }
+.legal-content h1 { margin-bottom: .5rem; }
+.legal-content .lede { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2rem; }
+.app-card {
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-lg, 1rem);
-  overflow: hidden;
-  background: var(--bg-card, rgba(128,128,128,.06));
+  padding: 1.25rem 1.5rem;
+  margin: 1rem 0;
+  background: var(--bg-card);
 }
-.dd-promo-video { position: relative; aspect-ratio: 16 / 9; background: rgba(128,128,128,.12); }
-.dd-promo-video video { width: 100%; height: 100%; object-fit: contain; display: block; background: #000; }
-.dd-promo-soon {
-  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
-  color: var(--text-muted, #6c757d); font-weight: 600; letter-spacing: .02em;
-}
-.dd-promo-card figcaption { padding: 1.1rem 1.35rem 1.35rem; }
-.dd-promo-card h3 { margin: 0 0 .4rem; font-size: 1.2rem; }
-.dd-promo-card p { margin: 0; color: var(--text-muted, #6c757d); }
+.app-card h2 { margin-top: 0; }
 </style>
-    <meta name="apple-itunes-app" content="app-id=6788131526" />
   </head>
   <body data-site-classes="site-shell">
-    <!-- TEMPORARY BETA BANNER — remove after beta testing -->
-    <a class="dd-beta-banner" href="https://testflight.apple.com/join/zHg8jw8d">🧪 Currently testing with TestFlight — <span class="dd-beta-cta">click here to access the beta</span></a>
     <header>
       <nav class="site-header navbar navbar-expand-md">
-        <div class="container flex-wrap flex-lg-nowrap">
-          <div class="me-2 me-md-auto">
-            <a href="./" class="brand-link d-inline-flex align-items-center navbar-brand"><span class="brand-name">Daily Decks</span></a>
-          </div>
-          <button type="button" class="navbar-toggler btn" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-          <div id="navbarCollapse" class="collapse navbar-collapse">
-            <ul class="navbar-nav mb-2 mb-md-0 col justify-content-end">
-              <li class="nav-item"><a href="#screenshots" class="nav-link text-nowrap">Screenshots</a></li>
-              <li class="nav-item"><a href="#videos" class="nav-link text-nowrap">Videos</a></li>
-              <li class="nav-item"><a href="#how" class="nav-link text-nowrap">How it works</a></li>
-              <li class="nav-item"><a href="#features" class="nav-link text-nowrap">Features</a></li>
-              <li class="nav-item"><a href="#pricing" class="nav-link text-nowrap">Pricing</a></li>
-              <li class="nav-item"><a href="#faq" class="nav-link text-nowrap">FAQ</a></li>
-              <li class="nav-item"><a href="https://testflight.apple.com/join/zHg8jw8d" class="text-nowrap btn btn-sm btn-primary">Join the beta</a></li>
-            </ul>
-          </div>
+        <div class="container">
+          <span class="brand-link d-inline-flex align-items-center navbar-brand"><span class="brand-name">4Dware</span></span>
         </div>
       </nav>
     </header>
     <main class="site-main">
       <div class="ig-main-content">
+        <article class="legal-content container">
+          <h1>4Dware</h1>
+          <p class="lede">Thoughtful iPhone apps, made in Wellington, New Zealand.</p>
 
-        <!-- Hero -->
-        <div id="hero" class="hero hero-centered">
-          <div class="container">
-            <div class="hero-content">
-              <h1 class="hero-title dd-rise">Turn studying into <span class="dd-grad-text">remembering</span>.</h1>
-              <img src="images/app-icon-512.png" alt="Daily Decks app icon" class="hero-app-icon dd-rise dd-rise-2" width="128" height="128" />
-              <p class="hero-wordmark dd-rise dd-rise-3">Daily Decks</p>
-              <p class="hero-subtitle dd-rise dd-rise-3">An Anki-compatible flashcard app for iPhone, with modern spaced repetition and private, on-device AI that turns your study notes into cards.</p>
-              <div class="hero-cta dd-rise dd-rise-4">
-                <a href="https://testflight.apple.com/join/zHg8jw8d" class="cta-button cta-button-primary btn btn-primary">Join the TestFlight beta</a>
-              </div>
-              <div class="dd-badges dd-rise dd-rise-4">
-                <span class="dd-badge"><i class="bi-shield-lock-fill"></i> Private by design</span>
-                <span class="dd-badge"><i class="bi-wifi-off"></i> Works offline</span>
-                <span class="dd-badge"><i class="bi-infinity"></i> No subscription</span>
-              </div>
-            </div>
+          <div class="app-card">
+            <h2>Daily Decks</h2>
+            <p>A private, Anki-compatible flashcard app with FSRS spaced repetition and on-device AI that turns your PDFs and study notes into cards.</p>
+            <p><a href="https://daily-decks.com/">daily-decks.com</a></p>
           </div>
-        </div>
 
-        <!-- Screenshots -->
-        <div id="screenshots" class="dd-shots-section">
-          <div class="container">
-            <div class="section-header">
-              <h2>See it in action</h2>
-              <p class="section-description">A clean, modern interface that stays out of your way.</p>
-            </div>
-            <div class="dd-carousel">
-              <button type="button" class="dd-arrow dd-arrow-prev" aria-label="Previous screenshot">‹</button>
-              <div class="dd-shots">
-              <figure class="dd-shot">
-                <img src="images/screenshots/1-decks.png" alt="Deck list with nested sub-decks" loading="lazy" width="600" height="1305" />
-                <figcaption>Organise with nested decks</figcaption>
-              </figure>
-              <figure class="dd-shot">
-                <img src="images/screenshots/2-study.png" alt="Studying a card with grade buttons" loading="lazy" width="600" height="1305" />
-                <figcaption>Study with smart scheduling</figcaption>
-              </figure>
-              <figure class="dd-shot">
-                <img src="images/screenshots/5-math.png" alt="A math card with a LaTeX-rendered formula" loading="lazy" width="600" height="1305" />
-                <figcaption>Beautiful math &amp; formulas</figcaption>
-              </figure>
-              <figure class="dd-shot">
-                <img src="images/screenshots/4-stats.png" alt="Statistics and retention heatmap" loading="lazy" width="600" height="1305" />
-                <figcaption>Track your retention</figcaption>
-              </figure>
-              <figure class="dd-shot">
-                <img src="images/screenshots/3-generate.png" alt="Generate cards with on-device AI" loading="lazy" width="600" height="1305" />
-                <figcaption>Generate cards on-device</figcaption>
-              </figure>
-              </div>
-              <button type="button" class="dd-arrow dd-arrow-next" aria-label="Next screenshot">›</button>
-            </div>
-            <div class="dd-dots" aria-hidden="true"></div>
+          <div class="app-card">
+            <h2>Welly Metro</h2>
+            <p>A simple Wellington bus and train commuter app for iPhone and Apple Watch.</p>
+            <p><a href="wellymetro/">Welly Metro website &amp; privacy</a></p>
           </div>
-        </div>
 
-        <!-- Promo videos -->
-        <div id="videos" class="features-section">
-          <div class="container">
-            <div class="section-header">
-              <h2>Watch Daily Decks in action</h2>
-              <p class="section-description">Short clips showing off what the app can do.</p>
-            </div>
-
-            <!--
-              Promo clips stream from Cloudflare R2 (media.4dware.net).
-              To publish one: upload the H.264 .mp4 to videos/promo/<key>.mp4, then
-              replace that card's .dd-promo-soon placeholder with a <video> block
-              (see the W2 / Image Occlusion card for the pattern). Optional poster
-              at images/promo/<key>.jpg.
-            -->
-            <div class="dd-promos">
-
-              <figure class="dd-promo-card">
-                <div class="dd-promo-video">
-                  <video controls muted playsinline preload="metadata" poster="images/promo/w4-anki-import-export.jpg">
-                    <source src="https://media.4dware.net/videos/promo/w4-anki-import-export.mp4" type="video/mp4" />
-                    Your browser doesn’t support embedded video.
-                  </video>
-                </div>
-                <figcaption>
-                  <h3>Anki import &amp; export</h3>
-                  <p>Bring your Anki collection in — media and scheduling intact — and export any time.</p>
-                </figcaption>
-              </figure>
-
-              <figure class="dd-promo-card">
-                <div class="dd-promo-video">
-                  <video controls muted playsinline preload="metadata" poster="images/promo/w2-on-device-ai-generation.jpg">
-                    <source src="https://media.4dware.net/videos/promo/w2-on-device-ai-generation.mp4" type="video/mp4" />
-                    Your browser doesn’t support embedded video.
-                  </video>
-                </div>
-                <figcaption>
-                  <h3>On-device AI generation <span class="dd-tag dd-tag-pro">Pro</span></h3>
-                  <p>Turn a PDF or your study notes into ready-to-review cards, all on your device. A Daily Decks Pro feature.</p>
-                </figcaption>
-              </figure>
-
-              <figure class="dd-promo-card">
-                <div class="dd-promo-video">
-                  <video controls muted playsinline preload="metadata" poster="images/promo/w5-streak-heatmap.jpg">
-                    <source src="https://media.4dware.net/videos/promo/w5-streak-heatmap.mp4" type="video/mp4" />
-                    Your browser doesn’t support embedded video.
-                  </video>
-                </div>
-                <figcaption>
-                  <h3>Streaks &amp; retention heatmap</h3>
-                  <p>Build daily streaks and watch your retention climb on a colourful heatmap.</p>
-                </figcaption>
-              </figure>
-
-              <figure class="dd-promo-card">
-                <div class="dd-promo-video">
-                  <video controls muted playsinline preload="metadata" poster="images/promo/w3-image-occlusion.jpg">
-                    <source src="https://media.4dware.net/videos/promo/w3-image-occlusion.mp4" type="video/mp4" />
-                    Your browser doesn’t support embedded video.
-                  </video>
-                </div>
-                <figcaption>
-                  <h3>Image occlusion</h3>
-                  <p>Turn diagrams and screenshots into hide-and-reveal cards.</p>
-                </figcaption>
-              </figure>
-
-            </div>
-          </div>
-        </div>
-
-        <!-- How it works -->
-        <div id="how" class="features-section">
-          <div class="container">
-            <div class="section-header">
-              <h2>Learn it once. Remember it for good.</h2>
-              <p class="section-description">Three steps from a pile of study notes to lasting recall.</p>
-            </div>
-            <div class="dd-steps">
-              <div class="dd-step">
-                <div class="dd-step-num">1</div>
-                <h4>Add your cards</h4>
-                <p>Import your existing Anki decks, or let on-device AI turn PDFs, study notes, and photos into ready-to-study cards.</p>
-              </div>
-              <div class="dd-step">
-                <div class="dd-step-num">2</div>
-                <h4>Study smart</h4>
-                <p>A modern FSRS scheduler shows each card at the exact moment you're about to forget it — fewer reviews, better recall.</p>
-              </div>
-              <div class="dd-step">
-                <div class="dd-step-num">3</div>
-                <h4>Remember for good</h4>
-                <p>Build daily streaks and watch your retention climb on a colourful stats heatmap.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Highlights -->
-        <div id="highlights" class="highlights-section highlights-grid-multiple-of-three">
-          <div class="container">
-            <div class="section-header">
-              <h2>Why Daily Decks</h2>
-              <p class="section-description">Built for serious learners who care about their data.</p>
-            </div>
-            <div class="highlights-grid">
-              <div class="highlight-card">
-                <h4 class="highlight-title">Private by design</h4>
-                <p class="highlight-description">AI runs on-device with Apple Intelligence, and sync uses your own iCloud. Your study data never touches our servers.</p>
-              </div>
-              <div class="highlight-card">
-                <h4 class="highlight-title">Proven memory science</h4>
-                <p class="highlight-description">FSRS v5 and classic SM-2 scheduling squeeze maximum retention from minimum review time.</p>
-              </div>
-              <div class="highlight-card">
-                <h4 class="highlight-title">Bring your whole library</h4>
-                <p class="highlight-description">Import Anki .apkg files and AnkiWeb decks — media, formatting, and scheduling intact.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Features -->
-        <div id="features" class="features-section features-grid-layout features-grid-auto">
-          <div class="container">
-            <div class="section-header">
-              <h2>Everything you need to study well</h2>
-              <p class="section-description">A generous free app, with two power features in Pro.</p>
-            </div>
-
-            <div class="dd-group-head"><span class="dd-tag dd-tag-free">Free</span><h3>In every download</h3></div>
-            <div class="features-grid">
-              <div class="feature-card">
-                <div class="feature-icon"><i class="feature-icon-image bi-clock-history"></i></div>
-                <h4 class="feature-title">Smart FSRS scheduling</h4>
-                <p class="feature-description">The latest FSRS v5 algorithm (and SM-2 if you prefer) times every review for the moment just before you'd forget.</p>
-              </div>
-              <div class="feature-card">
-                <div class="feature-icon"><i class="feature-icon-image bi-box-arrow-in-down"></i></div>
-                <h4 class="feature-title">Anki import &amp; export</h4>
-                <p class="feature-description">Move your collection in from Anki or AnkiWeb, and export any time. Your decks are always yours.</p>
-              </div>
-              <div class="feature-card">
-                <div class="feature-icon"><i class="feature-icon-image bi-crop"></i></div>
-                <h4 class="feature-title">Image occlusion</h4>
-                <p class="feature-description">Turn diagrams and screenshots into hide-and-reveal cards — manually or automatically.</p>
-              </div>
-              <div class="feature-card">
-                <div class="feature-icon"><i class="feature-icon-image bi-calculator"></i></div>
-                <h4 class="feature-title">Math &amp; science ready</h4>
-                <p class="feature-description">Beautiful MathJax and LaTeX rendering for formulas, equations, and chemistry.</p>
-              </div>
-              <div class="feature-card">
-                <div class="feature-icon"><i class="feature-icon-image bi-fire"></i></div>
-                <h4 class="feature-title">Streaks that motivate</h4>
-                <p class="feature-description">Keep your momentum with daily streaks and streak freezes for the days life gets in the way.</p>
-              </div>
-              <div class="feature-card">
-                <div class="feature-icon"><i class="feature-icon-image bi-graph-up-arrow"></i></div>
-                <h4 class="feature-title">Stats &amp; retention heatmap</h4>
-                <p class="feature-description">See exactly how your memory is trending with clear charts and a retention heatmap.</p>
-              </div>
-              <div class="feature-card">
-                <div class="feature-icon"><i class="feature-icon-image bi-app-indicator"></i></div>
-                <h4 class="feature-title">Home screen widgets</h4>
-                <p class="feature-description">Your due count and streak, one glance away — a gentle nudge to keep going.</p>
-              </div>
-            </div>
-
-            <div class="dd-group-head"><span class="dd-tag dd-tag-pro">Pro</span><h3>Unlocked with Daily Decks Pro</h3></div>
-            <div class="features-grid">
-              <div class="feature-card">
-                <div class="feature-icon"><i class="feature-icon-image bi-stars"></i></div>
-                <h4 class="feature-title">On-device AI card generation</h4>
-                <p class="feature-description">Drop in a PDF, lecture notes, or an image and get draft cards in seconds — processed entirely on your device.</p>
-              </div>
-              <div class="feature-card">
-                <div class="feature-icon"><i class="feature-icon-image bi-cloud-check-fill"></i></div>
-                <h4 class="feature-title">iCloud sync</h4>
-                <p class="feature-description">Pick up on any device, always in sync through your personal iCloud account.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Pricing -->
-        <div id="pricing" class="dd-pricing">
-          <div class="container">
-            <div class="section-header">
-              <h2>Simple pricing. No subscription.</h2>
-              <p class="section-description">Everything you need to study is free. Unlock the extras once, forever.</p>
-            </div>
-            <div class="dd-pricing-grid">
-              <div class="dd-price-card dd-price-card--free">
-                <span class="dd-price-badge dd-tag-free">Free</span>
-                <div class="dd-price">$0</div>
-                <ul class="dd-price-list">
-                  <li><i class="bi-check-circle-fill"></i> <span>Unlimited decks &amp; cards</span></li>
-                  <li><i class="bi-check-circle-fill"></i> <span>FSRS v5 &amp; SM-2 scheduling</span></li>
-                  <li><i class="bi-check-circle-fill"></i> <span>Anki &amp; AnkiWeb import / export</span></li>
-                  <li><i class="bi-check-circle-fill"></i> <span>Image occlusion &amp; MathJax</span></li>
-                  <li><i class="bi-check-circle-fill"></i> <span>Stats, heatmap, widgets &amp; streaks</span></li>
-                </ul>
-                <a href="https://apps.apple.com/app/id6788131526" class="btn btn-primary">Download on the App Store</a>
-              </div>
-              <div class="dd-price-card">
-                <span class="dd-price-badge">Daily Decks Pro</span>
-                <div class="dd-price">US$14.99 <small>one-time</small></div>
-                <p class="dd-price-note">Price varies by App Store region.</p>
-                <ul class="dd-price-list">
-                  <li><i class="bi-check-circle-fill"></i> <span>Everything in Free</span></li>
-                  <li><i class="bi-check-circle-fill"></i> <span><strong>On-device AI</strong> card generation from PDFs, study notes &amp; images</span></li>
-                  <li><i class="bi-check-circle-fill"></i> <span><strong>iCloud sync</strong> across all your devices</span></li>
-                  <li><i class="bi-check-circle-fill"></i> <span>Family Sharing included</span></li>
-                </ul>
-                <a href="https://apps.apple.com/app/id6788131526" class="btn btn-primary">Download on the App Store</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- FAQ -->
-        <div id="faq" class="faq-section">
-          <div class="container">
-            <div class="section-header">
-              <h2>Frequently asked questions</h2>
-              <p class="section-description">Everything else you might be wondering.</p>
-            </div>
-            <div class="faq-content faq-accordion-layout">
-              <div id="faqAccordion" class="faq-accordion accordion">
-                <div class="accordion-item">
-                  <h2 class="accordion-header"><button type="button" class="accordion-button collapsed btn" data-bs-toggle="collapse" data-bs-target="#faq-1" aria-expanded="false" aria-controls="faq-1">How do I import an Anki deck?</button></h2>
-                  <div id="faq-1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body"><p class="faq-answer">Copy your <code>.apkg</code> file into iCloud Files and import it into Daily Decks, or download a deck directly from AnkiWeb. Media and scheduling come across with it.</p></div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header"><button type="button" class="accordion-button collapsed btn" data-bs-toggle="collapse" data-bs-target="#faq-2" aria-expanded="false" aria-controls="faq-2">Is my data private?</button></h2>
-                  <div id="faq-2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body"><p class="faq-answer">Yes. AI card generation runs entirely on your device, and sync uses your own iCloud account. We don't collect, see, or store your study content. Read our <a href="privacy.html">Privacy Policy</a>.</p></div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header"><button type="button" class="accordion-button collapsed btn" data-bs-toggle="collapse" data-bs-target="#faq-3" aria-expanded="false" aria-controls="faq-3">Can I use it offline?</button></h2>
-                  <div id="faq-3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body"><p class="faq-answer">Absolutely. Studying works offline, and even AI card generation runs on-device — no internet required.</p></div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header"><button type="button" class="accordion-button collapsed btn" data-bs-toggle="collapse" data-bs-target="#faq-4" aria-expanded="false" aria-controls="faq-4">What's the difference between free and Pro?</button></h2>
-                  <div id="faq-4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body"><p class="faq-answer">Everything core is free: Anki import, unlimited decks, FSRS v5 &amp; SM-2 scheduling, stats, widgets, and streaks. A one-time Daily Decks Pro purchase adds on-device AI card generation and iCloud sync.</p></div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header"><button type="button" class="accordion-button collapsed btn" data-bs-toggle="collapse" data-bs-target="#faq-5" aria-expanded="false" aria-controls="faq-5">Does it support math and science?</button></h2>
-                  <div id="faq-5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body"><p class="faq-answer">Yes — Daily Decks renders MathJax and LaTeX, so formulas, equations, and chemistry look great on your cards.</p></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Download CTA -->
-        <div id="download" class="download-section">
-          <div class="container">
-            <div class="download-content">
-              <h2>Start remembering more today.</h2>
-              <p class="download-description">Free to download. No account required.</p>
-              <div class="store-badges">
-                <a href="https://testflight.apple.com/join/zHg8jw8d" class="btn btn-primary">Join the TestFlight beta</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
+          <h2>Support</h2>
+          <p>
+            Need help with either app? Visit the <a href="support/">support page</a> or email
+            <a href="mailto:fordee@icloud.com">fordee@icloud.com</a>.
+          </p>
+        </article>
       </div>
     </main>
     <div class="site-footer">
       <div class="container">
-        <div class="footer-content">
-          <div class="footer-brand">
-            <p class="footer-tagline">Turn studying into remembering.</p>
-          </div>
-        </div>
         <div class="footer-copyright">
-          <p>Copyright 2026 Daily Decks. All rights reserved. · <a href="privacy.html">Privacy Policy</a> · <a href="mailto:fordee@icloud.com">Contact</a></p>
+          <p>Copyright 2026 4Dware. All rights reserved. · <a href="mailto:fordee@icloud.com">Contact</a></p>
         </div>
       </div>
     </div>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/ignite-core.js"></script>
-    <script>
-      // Screenshot carousel: arrows, dot indicators, and edge-fade state.
-      (function () {
-        var carousel = document.querySelector('#screenshots .dd-carousel');
-        var track = document.querySelector('#screenshots .dd-shots');
-        var dotsWrap = document.querySelector('#screenshots .dd-dots');
-        if (!track) return;
-        var cards = Array.prototype.slice.call(track.querySelectorAll('.dd-shot'));
-
-        // Arrows scroll by one card.
-        document.querySelectorAll('#screenshots .dd-arrow').forEach(function (btn) {
-          btn.addEventListener('click', function () {
-            var step = cards[0] ? cards[0].getBoundingClientRect().width + 24 : track.clientWidth * 0.8;
-            track.scrollBy({ left: btn.classList.contains('dd-arrow-next') ? step : -step, behavior: 'smooth' });
-          });
-        });
-
-        // Build one dot per slide; click scrolls that slide into view.
-        cards.forEach(function (card, i) {
-          var dot = document.createElement('button');
-          dot.type = 'button';
-          dot.className = 'dd-dot';
-          dot.setAttribute('aria-label', 'Go to screenshot ' + (i + 1));
-          dot.addEventListener('click', function () {
-            var left = card.getBoundingClientRect().left - track.getBoundingClientRect().left
-              + track.scrollLeft - (track.clientWidth - card.clientWidth) / 2;
-            track.scrollTo({ left: left, behavior: 'smooth' });
-          });
-          dotsWrap.appendChild(dot);
-        });
-        var dots = Array.prototype.slice.call(dotsWrap.querySelectorAll('.dd-dot'));
-
-        function update() {
-          var tRect = track.getBoundingClientRect();
-          var center = tRect.left + tRect.width / 2;
-          var active = 0, best = Infinity;
-          cards.forEach(function (c, i) {
-            var r = c.getBoundingClientRect();
-            var dist = Math.abs(r.left + r.width / 2 - center);
-            if (dist < best) { best = dist; active = i; }
-          });
-          dots.forEach(function (d, i) { d.classList.toggle('is-active', i === active); });
-          // Edge fades: hide the fade at whichever end we've reached.
-          carousel.classList.toggle('at-start', track.scrollLeft <= 2);
-          carousel.classList.toggle('at-end', track.scrollLeft + track.clientWidth >= track.scrollWidth - 2);
-        }
-        track.addEventListener('scroll', function () { window.requestAnimationFrame(update); });
-        window.addEventListener('resize', update);
-        update();
-      })();
-    </script>
   </body>
 </html>

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: 4Dware.net/sitemap.xml
+Sitemap: https://www.4dware.net/sitemap.xml
